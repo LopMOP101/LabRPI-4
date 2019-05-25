@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Новости</h1>
+  <div class="search">
+    <div id="searchBySource"></div>
+    <form id="searchByWordForm">
+      <label>
+        Поиск по слову:
+        <input type="text" id="searchByWord" autocomplete="off" />
+      </label>
+      <input type="submit" value="Поиск">
+    </form>
+  </div>
+  <div class="articles"></div>
+  <button id="loadMore">Загрузить ещё</button>
+  <template id="articleTemplate">
+    <div class="article">
+      <h2>{title}</h2>
+      <div class="article-subtitle">
+        <cite>{author}</cite>
+        <div class="article-subtitle-date">{publishedAt}</div>
+      </div>
+      <div>{description}</div>
+      <img src="{urlToImage}" />
+      <button onclick="openUrl('{url}')">Подробнее</button>
+    </div>
+  </template>
+  <script src="app.js"></script>
+</body>
+</html>
